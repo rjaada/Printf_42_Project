@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wolfy <wolfy@student.42.fr>                +#+  +:+       +#+         #
+#    By: rjaada <rjaada@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/07 19:26:32 by wolfy             #+#    #+#              #
-#    Updated: 2023/11/07 19:55:02 by wolfy            ###   ########.fr        #
+#    Created: 2023/11/13 17:06:46 by rjaada            #+#    #+#              #
+#    Updated: 2023/11/13 17:08:13 by rjaada           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,13 +56,3 @@ fclean: clean
 re: fclean all
 
 .PHONY = all clean fclean re
-
-TEST_SRC = test.c
-TEST_OBJ = $(TEST_SRC:.c=.o)
-TEST_PROGRAM = test_program
-
-$(TEST_PROGRAM): $(OBJ) $(OBJ_UTILS) $(TEST_OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
-
-test: $(TEST_PROGRAM)
-	./$(TEST_PROGRAM)
