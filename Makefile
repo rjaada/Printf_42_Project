@@ -6,7 +6,7 @@
 #    By: rjaada <rjaada@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 17:06:46 by rjaada            #+#    #+#              #
-#    Updated: 2023/11/16 17:00:28 by rjaada           ###   ########.fr        #
+#    Updated: 2023/11/16 18:02:05 by rjaada           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,22 +42,17 @@ OBJ_UTILS = $(UTILS:.c=.o)
 
 AR = ar rcs
 
-LIBFT = libft/libft.a
 
-all: $(LIBFT) $(NAME)
+all: $(NAME)
 
-$(LIBFT):
-	make -C libft
 
 $(NAME): $(OBJ) $(OBJ_UTILS)
 	$(AR) $(NAME) $(OBJ) $(OBJ_UTILS)
 
 clean:
-	make -C libft clean
 	$(RM) $(OBJ) $(OBJ_UTILS)
 
 fclean: clean
-	make -C libft fclean
 	$(RM) $(NAME)
 
 re: fclean all
